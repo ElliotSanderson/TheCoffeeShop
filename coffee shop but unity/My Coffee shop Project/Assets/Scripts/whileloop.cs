@@ -1,15 +1,16 @@
 //using UnityEngine;
 
-//public class forloop : MonoBehaviour
+//public class whileloop : MonoBehaviour
 //{
+//    private int beans = 3;
 //    // Start is called once before the first execution of Update after the MonoBehaviour is created
 //    void Start()
 //    {
-//        for  (int i = 0; i < 5; i++)
+//        while (beans > 0)
 //        {
-//            Debug.Log("Coffee number: " + i);
+//            Debug.Log("Served a coffee, beans left: " + beans);
+//            beans --;
 //        }
-        
 //    }
 
 //    // Update is called once per frame

@@ -1,15 +1,15 @@
 //using UnityEngine;
-
-//public class forloop : MonoBehaviour
+//public class ForEachexample : MonoBehaviour
 //{
+//    private string[] coffeeMenu = { "Espresso", "Latte", "Mocha" };
 //    // Start is called once before the first execution of Update after the MonoBehaviour is created
 //    void Start()
 //    {
-//        for  (int i = 0; i < 5; i++)
+//        foreach (string coffee in coffeeMenu)
 //        {
-//            Debug.Log("Coffee number: " + i);
+//            Debug.Log("Now serving: " + coffee);
 //        }
-        
+     
 //    }
 
 //    // Update is called once per frame
