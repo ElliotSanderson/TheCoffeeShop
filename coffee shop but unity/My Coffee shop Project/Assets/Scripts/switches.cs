@@ -37,12 +37,6 @@ public class switchenums : MonoBehaviour
             case CoffeeType.mocha:
                 Debug.Log("Mixing chocolate with Espresso for a Mocha");
                 break;
-            case CoffeeType.nitro_cold_brew:
-                Debug.Log("getting you a cold one now");
-                break;
-            default:
-                Debug.Log("We Don't have that, sorry.");
-                break;
         }
     }
 
