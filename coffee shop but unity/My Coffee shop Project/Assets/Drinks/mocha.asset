@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8e0d5d3932ddd4f9d0451d3bec3a8d, type: 3}
   m_Name: mocha
   m_EditorClassIdentifier: 
-  ingredients: []
+  ingredients:
+  - {fileID: 11400000, guid: 7b3182fabda3cf941a30ab437a04ad59, type: 2}
+  - {fileID: 11400000, guid: 325e86cddb31392458c638030176d9e4, type: 2}
+  - {fileID: 11400000, guid: f81cbc65be0c1b344899d5bf8a52bf2e, type: 2}

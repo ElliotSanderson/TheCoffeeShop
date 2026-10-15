@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77130296dc556c24a9f274d66147cbe7, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  price: 0
-  quantity: 0
+  price: 0.3
+  quantity: 1
+  Instock: 1
+  allergies: 
