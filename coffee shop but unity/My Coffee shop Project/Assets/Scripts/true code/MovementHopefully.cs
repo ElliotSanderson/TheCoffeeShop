@@ -11,8 +11,8 @@ public class MovementHopefully : MonoBehaviour
     [SerializeField] private float JumpForce = 8.00f;
     [SerializeField] private float Gravity = 20.0f;
 
-    [SerializeField] private float LookSensitivity  = 0.2f;
-    [SerializeField] private float LookingAngleLimit = 90f;
+    [SerializeField] private float LookSensitivity = 0.2f;
+    [SerializeField] private float LookAngleLimit = 90f;
 
     Camera playerCamera;
     CharacterController characterController;
@@ -45,10 +45,12 @@ public class MovementHopefully : MonoBehaviour
     private void Update()
     {
         Vector2 moveVector = moveInput.ReadValue<Vector2>();
+        Vector2 mouseDelta = new Vector2(Mouse.current.delta.x.ReadValue(), Mouse.current.delta.y.ReadValue());
         if (!characterController.isGrounded)
             jumped = false;
-        currentMoveSpeed = runInput.IsPressed() ? RunningSpeed : WalkSpeed
+        currentMoveSpeed = runInput.IsPressed() ? RunningSpeed : WalkSpeed;
         HandleMovement(moveVector);
+        HandleLooking(mouseDelta);
     }
     private void HandleMovement(Vector2 moveVector)
     {
@@ -59,7 +61,7 @@ public class MovementHopefully : MonoBehaviour
 
         Vector2 newSpeed = new Vector2(moveVector.y * currentMoveSpeed, moveVector.x * currentMoveSpeed);
 
-        moveDirection = (forward * newSpeed.x) + (right  * newSpeed.y);
+        moveDirection = (forward * newSpeed.x) + (right * newSpeed.y);
         if (jumped && characterController.isGrounded)
             moveDirection.y = JumpForce;
         else
@@ -71,5 +73,13 @@ public class MovementHopefully : MonoBehaviour
     private void Jumped(InputAction.CallbackContext _)
     {
         jumped = true;
+    }
+    private void HandleLooking(Vector2 mouseDelta)
+    {
+        lookAngle += -mouseDelta.y * LookSensitivity;
+        lookAngle = Mathf.Clamp(lookAngle, -LookAngleLimit, LookAngleLimit);
+
+        playerCamera.transform.localRotation = Quaternion.Euler(lookAngle, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, mouseDelta.x * LookSensitivity, 0);
     }
 }

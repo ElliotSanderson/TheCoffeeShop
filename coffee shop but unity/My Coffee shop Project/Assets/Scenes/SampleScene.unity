@@ -892,7 +892,7 @@ MonoBehaviour:
   JumpForce: 8
   Gravity: 20
   LookSensitivity: 0.2
-  LookingAngleLimit: 90
+  LookAngleLimit: 90
 --- !u!1 &1666521197
 GameObject:
   m_ObjectHideFlags: 0
